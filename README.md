@@ -63,6 +63,17 @@ The **AID Extension** is a browser extension designed to help developers and acc
 
 - **Testing Changes**: After making changes, reload the extension in Chrome using the **Reload** button in the `chrome://extensions/` interface to see your updates live.
 
+## Project Status
+
+This project is still in development. As of now, the only implemented feature is the **contrast test**, and it is still being actively worked on. Other features (like heading structure tests, landmark tests, etc.) are not yet functional.
+
+### Known Issues:
+- **Contrast test**: The contrast test is a work in progress and may not always produce correct results.
+- Other planned tests (e.g., heading structure test, landmark test) are placeholders and not yet functional.
+
+Feel free to fork this project or contribute if you'd like to help with the development of these features.
+
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
