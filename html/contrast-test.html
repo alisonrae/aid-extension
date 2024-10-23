@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrast Test Page</title>
+    <style>
+        body {
+            background-color: #fff; /* White background */
+            color: #000; /* Default black text */
+        }
+
+        /* Low contrast text and background */
+        .low-contrast {
+            color: #b3b3b3; /* Light gray text */
+            background-color: #e6e6e6; /* Light gray background */
+        }
+
+        /* High contrast text on bright yellow background */
+        .high-contrast {
+            color: #000; /* Black text */
+            background-color: #ffeb3b; /* Bright yellow background */
+        }
+
+        /* Low contrast text on white background */
+        .low-contrast-text-only {
+            color: #cccccc; /* Light gray text */
+        }
+
+        /* Transparent background with red text */
+        .transparent-bg {
+            color: #ff0000; /* Red text */
+            background-color: transparent;
+        }
+
+        /* Parent with a black background */
+        .parent {
+            background-color: #000; /* Black background */
+            padding: 20px;
+        }
+
+        /* Child with background image (visually white) */
+        .background-image {
+            background-image: url('https://dummyimage.com/400x100/ffffff/ffffff.png'); /* White background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #000; /* Black text */
+            padding: 20px;
+        }
+
+        /* Good contrast example */
+        .good-contrast {
+            color: #000; /* Black text */
+            background-color: #fff; /* White background */
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Transparent background inherited from parent */
+        .parent-with-bg {
+            background-color: #000; /* Black background */
+            padding: 20px;
+        }
+        .child-text {
+            color: #fff; /* White text */
+            background-color: transparent;
+            padding: 10px;
+        }
+
+        /* Nested span example */
+        .no-text {
+            background-color: #000; /* Black background */
+            color: #000; /* Black text */
+        }
+        .white-text {
+            color: #fff; /* White text */
+        }
+    </style>
+</head>
+<body>
+    <h1>Contrast Test Page</h1>
+    <p>This is a page with some elements designed to test contrast issues.</p>
+
+    <h2>Examples with Contrast Issues:</h2>
+    <p class="low-contrast">This is low contrast text on a low contrast background.</p>
+    <p class="high-contrast">This is high contrast text on a high contrast background (black on yellow).</p>
+    <p class="low-contrast-text-only">This is low contrast text only (light gray on white background).</p>
+    <p class="transparent-bg">This is text with a transparent background and red text color.</p>
+
+    <h2>Examples with No Contrast Issues:</h2>
+    <p>This is standard black text on a white background. There should be no contrast issue.</p>
+    <p style="color: #fff; background-color: #000;">This is high contrast white text on a black background.</p>
+
+    <h2>Complex Example with Background Image:</h2>
+    <div class="parent">
+        <div class="background-image">
+            <p>This is black text over a visually white background image, but the parent has a black background.</p>
+        </div>
+    </div>
+
+    <h2>Contrast Test with Transparency</h2>
+    <div class="good-contrast">
+        <p>This text has good contrast: black on a white background.</p>
+    </div>
+
+    <div class="transparent-bg">
+        <p>This text has a transparent background, but since the body is white, it still has good contrast.</p>
+    </div>
+
+    <div class="parent-with-bg">
+        <div class="child-text">
+            <p>This text inherits a transparent background, but the parent has a black background, so this should flag a contrast issue (white on black).</p>
+        </div>
+    </div>
+
+    <h2>Contrast Test for Nested Span Tags</h2>
+    <span class="no-text"><span class="white-text">Here is some text</span></span>
+
+</body>
+</html>

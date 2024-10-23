@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aid-extension</title>
+    <link rel="stylesheet" href="../css/popup.css">
+</head>
+<body>
+    <div id="container">
+        <h2>Structure Tests</h2>
+        <div id="structure-tests">
+            <button id="heading-structure-test">Heading Structure Test</button>
+            <button id="landmark-test">Landmark Test</button>
+            <button id="role-aria-test">Role & ARIA Implementation Test</button>
+            <button id="form-labels-test">Form Labels & Fieldsets Test</button>
+        </div>
+
+        <h2>Content Tests</h2>
+        <div id="content-tests">
+            <button id="contrast-test">Contrast Test</button>
+            <button id="image-alt-text-test">Image Alt Text Test</button>
+        </div>
+
+        <!-- Initially hidden results section -->
+        <div id="results">
+            <h2>Test Results</h2>
+            <p id="contrast-results" role="status" aria-live="polite" style="display:none;">No results yet.</p>
+        </div>
+    </div>
+
+    <script src="../js/popup.js"></script>
+</body>
+</html>
