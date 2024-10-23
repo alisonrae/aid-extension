@@ -2,7 +2,7 @@
 
 The **AID Extension** is a browser extension designed to help developers and accessibility testers evaluate web pages for accessibility issues. It automates tests like contrast checking, heading structure verification, and landmark assessments, combining essential accessibility checks into a single tool.
 
-## Features
+## Intended Features
 
 - **Contrast Test**: Highlights areas of a webpage with insufficient color contrast according to WCAG guidelines.
 - **Heading Structure Test**: Verifies if headings follow a correct hierarchical structure.
