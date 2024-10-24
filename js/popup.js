@@ -1,24 +1,25 @@
 // 1. Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
     const contrastTestBtn = document.getElementById('contrast-test');
-    const resultElement = document.getElementById('contrast-results'); // Cache result element
+    const resultsSection = document.getElementById('results');
+    const contrastResultElement = document.getElementById('contrast-results'); // Cache result element
 
     if (contrastTestBtn) {
         contrastTestBtn.addEventListener('click', function() {
-            updateResultElement(resultElement, 'Running contrast test...');
-            runContrastTest(resultElement); // Run contrast test and update results
+            updateResultElement(contrastResultElement, 'Running contrast test...');
+            runContrastTest(resultsSection, contrastResultElement); // Run contrast test and update results
         });
     }
 });
 
 // 2. Run the Contrast Test
-async function runContrastTest(resultElement) {
+async function runContrastTest(resultsSection, contrastResultElement) {
     try {
         const issuesFound = await sendMessageToContentScript('runContrastTest');
-        updateResultElement(resultElement, `Contrast issues found: ${issuesFound}`);
+        updateResultElement(resultsSection, contrastResultElement, `Contrast issues found: ${issuesFound}`);
     } catch (error) {
         console.error('Error running contrast test:', error);
-        updateResultElement(resultElement, `Error: ${error.message}. Please try again.`);
+        updateResultElement(resultsSection, contrastResultElement, `Error: ${error.message}. Please try again.`);
     }
 }
 
@@ -40,7 +41,7 @@ async function sendMessageToContentScript(testAction) {
 }
 
 // 4. Update the Result Element (DOM manipulation only)
-function updateResultElement(element, message) {
+function updateResultElement(container, element, message) {
     element.textContent = message;
-    element.style.display = 'block'; // Ensure the result element is visible
+    container.style.display = 'block'; // Ensure the result element is visible
 }
